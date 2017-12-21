@@ -10,6 +10,7 @@ import (
 
 func download_pipe(url string, filename string, dir string) error {
 	cmd := exec.Command("wget", url, "-O", dir+"/"+filename)
+	// cmd := exec.Command("aria2c", "-x", "8", "-c", url, "-o", dir+"/"+filename)
 	return pipeCmd(cmd, os.Stdout)
 }
 
